@@ -1,0 +1,9 @@
+# Ignore environment config
+.env
+
+# Ignore Bun runtime files
+.bun/
+
+# Optional: local Live Server config, temp
+.vscode/
+.DS_Store
