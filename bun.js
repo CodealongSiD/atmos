@@ -18,6 +18,29 @@ Bun.serve({
     const lat = url.searchParams.get("lat");
     const lon = url.searchParams.get("lon");
 
+    // 🔄 Reset count on new day
+    const now = new Date().toDateString();
+    if (now !== today) {
+      today = now;
+      dailyCount = 0;
+      console.log("🔁 New day detected. API count reset.");
+    }
+
+    // 🚫 Block if limit reached
+    if (dailyCount >= 600) {
+      console.warn("⚠️ API limit reached for today");
+      return new Response(
+        JSON.stringify({ error: "Daily API limit of 600 calls reached." }),
+        {
+          status: 429,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    }
+
     let fetchUrl;
 
     if (city) {
