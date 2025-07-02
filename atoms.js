@@ -5,7 +5,7 @@ const sbtn = document.querySelector('.sbtn');
 
 const BASE_URL = (location.hostname === "localhost" || location.hostname === "127.0.0.1")
   ? "http://127.0.0.1:3000"
-  : "https://your-deployed-bun-server.com"; // Replace this in production
+  : "https://atmos-5hgj.onrender.com"; // Replace this in production
 
 // Weather-related mappings
 const tips = {
