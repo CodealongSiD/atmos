@@ -3,7 +3,7 @@
 import { config } from "dotenv";
 config();
 
-console.log("🔐 Loaded API Key:", process.env.API_KEY);
+//console.log("🔐 Loaded API Key:", process.env.API_KEY);
 
 const API_KEY = process.env.API_KEY;
 const BASE_URL = "http://api.openweathermap.org/data/2.5/weather";
